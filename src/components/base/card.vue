@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="card">
-      {{text}}
+      {{text}}000000000000000
     </p>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <script>
 export default {
-  globalData: {name: 'hk'},
   created () {
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync('logs') || []
@@ -8,6 +7,9 @@ export default {
     wx.setStorageSync('logs', logs)
 
     console.log('app created and cache logs by setStorageSync')
+  },
+  onLaunch() {
+    console.log('启动')
   }
 }
 </script>

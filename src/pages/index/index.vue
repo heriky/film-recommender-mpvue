@@ -22,11 +22,25 @@
     </form>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
     <color-text active-color="red">没什么，我只是想测试一下自定义组件的支持成都啊</color-text>
+    <map id="map" longitude="113.324520" latitude="23.099994"></map>
+    <h-group className="red">
+      <span>文字1</span>
+      <span>文字2</span>
+    </h-group>
+    <div style="height: 100px">
+      <v-group verticalAlign="space-between">
+        <span>文字4</span>
+        <span>文字3</span>
+      </v-group>
+    </div>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
+import card from '@/components/base/card'
+import HGroup from '@/components/base/h-group';
+import VGroup from '@/components/base/v-group';
+
 import ColorText from './views/color-text'
 import wx from 'wx'
 import Vue from 'vue'
@@ -35,7 +49,7 @@ import { State, Action } from 'vuex-class'
 
 @Component({
   name: 'index',
-  components: { card, ColorText }
+  components: { card, ColorText, HGroup, VGroup }
 })
 export default class Index extends Vue {
   @State('userInfo') userInfo
@@ -46,6 +60,7 @@ export default class Index extends Vue {
 
   created () {
     this.fetchUserInfo()
+    console.log(getApp());
   }
 
   bindViewTap () {
@@ -63,7 +78,7 @@ export default class Index extends Vue {
 }
 </script>
 
-<style scoped>
+<style>
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -99,4 +114,8 @@ export default class Index extends Vue {
   color: blue;
   border: 1px solid blue;
 }
+
+  .red {
+    color: red;
+  }
 </style>

@@ -33,3 +33,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #### 2018-05-20
 + 添加vuex支持、添加vuex-class支持
 + 因为引入了class-component，vuex通过官方的形式无法注入，可以直接向Vue.prototype原型注入
++ 使用不同的思路，实现HGroup/VGroup/Group布局组件
