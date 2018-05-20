@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span>用户名称：{{nickName}}</span>
     <ul class="container log-list">
       <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
         <card :text="(index + 1) + ' . ' + log"></card>
@@ -26,6 +27,11 @@ export default {
   created () {
     const logs = (wx.getStorageSync('logs') || [])
     this.logs = logs.map(log => formatTime(new Date(log)))
+  },
+  computed: {
+    nickName () {
+      return this.$store.state.userInfo.nickName
+    }
   }
 }
 </script>

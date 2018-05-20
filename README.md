@@ -29,3 +29,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 + 在webpack中配置wx 和 flyio的alias, 一方面对flyio进行统一化处理，另一方面可以简化import wx / flyio的流程
 + 使用async/await简化异步请求过程
 + 下一步计划引入vuex试水
+
+#### 2018-05-20
++ 添加vuex支持、添加vuex-class支持
++ 因为引入了class-component，vuex通过官方的形式无法注入，可以直接向Vue.prototype原型注入

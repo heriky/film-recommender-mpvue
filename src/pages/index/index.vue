@@ -14,6 +14,8 @@
       </div>
     </div>
 
+    <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">获取用户信息</button>
+
     <form class="form-container">
       <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
@@ -27,45 +29,36 @@
 import card from '@/components/card'
 import ColorText from './views/color-text'
 import wx from 'wx'
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { State, Action } from 'vuex-class'
 
-export default {
-  data () {
-    return {
-      motto: 'Hello World',
-      userInfo: {}
-    }
-  },
-  computed: {
-  },
-  components: {
-    card,
-    ColorText
-  },
+@Component({
+  name: 'index',
+  components: { card, ColorText }
+})
+export default class Index extends Vue {
+  @State('userInfo') userInfo
+  @State(state => state.nickname) nickname
+  @Action('fetchUserInfo') fetchUserInfo
 
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      wx.navigateTo({ url })
-    },
-    async getUserInfo () {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
-            }
-          })
-        }
-      })
-    },
-    clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
-    }
-  },
+  motto = 'Hello World'
+
   created () {
-    // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+    this.fetchUserInfo()
+  }
+
+  bindViewTap () {
+    const url = '../logs/main'
+    wx.navigateTo({ url })
+  }
+
+  clickHandle (msg, ev) {
+    console.log('clickHandle:', msg, ev)
+  }
+
+  onGotUserInfo (info) {
+    console.log(info)
   }
 }
 </script>
