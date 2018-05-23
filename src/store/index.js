@@ -29,7 +29,6 @@ const globalActions = {
       success: () => {
         wx.getUserInfo({
           success: (res) => {
-            console.log(2221113333)
             commit(USER_INFO, res.userInfo)
           }
         })

@@ -31,4 +31,8 @@ export default {
   -webkit-transition: width 2s;
   -o-transition: width 2s;
 }
+  body {
+    background: #efefef;
+    font-size: 28rpx;
+  }
 </style>

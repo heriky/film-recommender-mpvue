@@ -38,3 +38,8 @@
 + 添加vuex支持、添加vuex-class支持
 + 因为引入了class-component，vuex通过官方的形式无法注入，可以直接向Vue.prototype原型注入
 + 使用不同的思路，实现HGroup/VGroup/Group布局组件
+
+#### 2018-05-22
++ 使用vue-class-component定义vue组件，无法监听到小程序的生命周期事件。通过Component.registerHooks解决问题
++ 开发search-box组件。由于小程序不支持styleObject和classObject的绑定，只有通过字符串的模式融合组件内外的样式。且为了传入的样式字符生效，父组件定义
+  的css名称不能是scope模式的。基于这个原因，组件的开发需要使用全局样式，而在page中可使用scope。
