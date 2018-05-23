@@ -20,6 +20,10 @@
 [mpVue](http://mpvue.com)
 [flyio](https://wendux.github.io/dist/#/doc/flyio/wx)
 
+## 开发方式
+
+ + `npm run dev`
+ + 使用开发者工具打开dist目录
 
 ## 开发记录
 
