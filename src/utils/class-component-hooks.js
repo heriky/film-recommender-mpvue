@@ -4,5 +4,6 @@
 import Component from 'vue-class-component';
 
 Component.registerHooks([
-  'onPullDownRefresh'
+  'onPullDownRefresh',
+  'onPageScroll'
 ]);

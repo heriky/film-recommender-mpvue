@@ -3,6 +3,7 @@ import App from './App';
 import store from '@/store';
 
 import './utils/class-component-hooks';
+import '../static/style/iconfont.css';
 
 Vue.config.productionTip = false;
 App.mpType = 'app';
@@ -17,14 +18,12 @@ export default {
   config: {
     // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
     pages: [
-      // 测试页面
-      'pages/logs/main',
-      'pages/index/main',
-
       // 项目页面
       '^pages/popular/main',
       'pages/top/main',
-      'pages/my/main'
+      'pages/my/main',
+      'pages/film-detail/main',
+      'pages/search/main'
     ],
     window: {
       backgroundColor: '#ccc',

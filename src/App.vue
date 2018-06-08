@@ -30,9 +30,33 @@ export default {
   -moz-transition: width 2s;
   -webkit-transition: width 2s;
   -o-transition: width 2s;
+
+  box-sizing: border-box;
 }
   body {
     background: #efefef;
     font-size: 28rpx;
+  }
+
+  .group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .h-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .v-group {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 </style>

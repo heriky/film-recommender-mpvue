@@ -2,7 +2,7 @@
   <div class="group"
        :class="className"
        :style="{justifyContent: horizontalAlign, alignItems: verticalAlign}">
-    <slot/>
+    <slot></slot>
   </div>
 </template>
 

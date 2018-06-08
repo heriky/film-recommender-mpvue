@@ -31,39 +31,9 @@
   .v-group {
     display: flex;
     height: 100%;
+    width: 100%;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-  }
-
-  /*horizontalAlign*/
-  .h-flex-start {
-    align-items: flex-end;
-  }
-  .h-flex-end {
-    align-items: flex-start;
-  }
-  .h-center {
-    align-items: center;
-  }
-
-  /*verticalAlign*/
-  .v-flex-start {
-    justify-content: flex-start;
-  }
-  .v-flex-end {
-    justify-content: flex-end;
-  }
-  .v-center {
-    justify-content: center;
-  }
-  .v-space-between {
-    justify-content: space-between;
-  }
-  .v-space-around {
-    justify-content: space-around;
-  }
-  .v-space-evenly {
-    justify-content: space-evenly;
   }
 </style>
